@@ -29,7 +29,9 @@ app.use('/transaction', transactionRouter);
 
 mongoose.connect(process.env.MONGODB_URL).then(async (con) => {
   // await mongoose.connection.db.dropDatabase();
-  // Product.insertMany(products);
+  KPI.insertMany(kpis);
+  Transaction.insertMany(transactions);
+  Product.insertMany(products);
 });
 
 app.listen(process.env.PORT, () => {
